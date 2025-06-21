@@ -3,7 +3,7 @@ export const post_request = async (n: string, m: string) => {
     const url = "/api/categories?name="+n+"&firm="+m;
     
     console.log("post_request called with URL:", n, " ", m);
-    const api_key = "AIzaSyDfT0QYWewRwMJ50ZdxatsOfa6txaqRvZM";
+    const api_key = process.env.GEMINI_API_KEY;
   const response = await fetch(url, {
     method: 'POST',
     headers: {
@@ -31,7 +31,7 @@ return data.areas_of_interest;
 export const post_request_report = async (n: string, m: string, cats: string) => {
     const url = "/api/report?name="+n+"&firm="+m;
     console.log("post_request called with URL:", url);
-    const api_key = "AIzaSyDfT0QYWewRwMJ50ZdxatsOfa6txaqRvZM";
+    const api_key = process.env.GEMINI_API_KEY;
   const response = await fetch(url, {
     method: 'POST',
     headers: {
