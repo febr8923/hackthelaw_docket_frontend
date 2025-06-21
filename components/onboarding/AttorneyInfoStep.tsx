@@ -120,7 +120,7 @@ const AttorneyInfoStep: React.FC<AttorneyInfoStepProps> = ({
         setSubmitted(true);
         updateProfile({ categories: result, additionalInterests: result });
         //updateProfile({additionalInterests: result["areas_of_interest"] || []});
-        post_request_report("name", "mail", "categories");
+        post_request_report(fullName, lawFirm, "categories");
         //console.log("Categories received:", result);
         await onAttorneyInfoSubmit({ fullName, workEmail, lawFirm });
       } catch (error) {
