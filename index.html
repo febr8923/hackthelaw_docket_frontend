@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Docket</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Lexend', sans-serif; 
+      }
+      @keyframes pulse-gentle {
+        0%, 100% { opacity: 0.8; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.05); }
+      }
+      .animate-pulse-gentle {
+        animation: pulse-gentle 2s infinite ease-in-out;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fadeIn {
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9; /* slate-100, light gray for track */
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #b59bff; /* primaryAccent-300 (new blue) */
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #976eff; /* primaryAccent-400 (new blue) */
+      }
+      @keyframes highlight-field-soft {
+        0% { background-color: transparent; } /* Input's default is bg-gray-50, transparent will show that */
+        30%, 70% { background-color: #e4d9ff; } /* primaryAccent-100 */
+        100% { background-color: transparent; } /* Return to input's default */
+      }
+      .animate-field-populated-soft {
+        animation: highlight-field-soft 0.8s ease-out;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Lexend', 'sans-serif'],
+              serif: ['Lexend', 'serif'], 
+            },
+            colors: {
+              primaryAccent: { // Blue #3e00ff - NOW PRIMARY
+                '50': '#f1ecff',
+                '100': '#e4d9ff',
+                '200': '#d0c0ff',
+                '300': '#b59bff',
+                '400': '#976eff',
+                '500': '#713fff', 
+                '600': '#3E00FF', // Main shade
+                '700': '#3200d1',
+                '800': '#2700a6',
+                '900': '#1e007d',
+                '950': '#150057',
+              },
+              secondaryAccent: { // Pink #f29fe4 - NOW SECONDARY
+                '50': '#fef7fc',
+                '100': '#fdeff9',
+                '200': '#fbdff3',
+                '300': '#f9cfec',
+                '400': '#f6b5e2',
+                '500': '#f29fe4', // Main shade
+                '600': '#ea80cf',
+                '700': '#dd60b9',
+                '800': '#ca48a4',
+                '900': '#ad3e87',
+                '950': '#78265c',
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.6.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-white">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
